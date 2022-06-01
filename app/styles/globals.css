@@ -14,3 +14,19 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "KeeponTruckin";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/KeeponTruckin.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/Montserrat-Regular.ttf");
+}

@@ -1,5 +1,10 @@
 .container {
   padding: 0 2rem;
+  background-image: url(../public/wave.svg);
+  background-size: cover;
+  background-color: #e9fffa;
+  font-family: "Montserrat";
+  min-height: 100vh;
 }
 
 .main {
