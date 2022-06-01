@@ -179,7 +179,7 @@ export default function Home() {
           <div style={walletBtnWrap}>{renderButton()}</div>
         </header>
         <main style={mainContainer}>
-          {currentAccount !== "" && (
+          {currentAccount !== "" ? (
             /** Add askContractToMintNft Action for the onClick event **/
             <>
               <button
@@ -191,11 +191,21 @@ export default function Home() {
                 Mint
               </button>
               <div style={nftLink}>
-                {loading && <p>minting...</p>}
+                {loading && (
+                  <>
+                    <p>Minting...</p>
+                    <img src="https://i.giphy.com/media/yoJC2zh1Afnc9og4U0/giphy.webp" />
+                  </>
+                )}
                 {!loading && link !== "" && (
                   <a href={link.toLowerCase()}>View your NFT on Opensea!</a>
                 )}
               </div>
+            </>
+          ) : (
+            <>
+              <p>Welcome!</p>
+              <img src="https://i.giphy.com/media/yoJC2zh1Afnc9og4U0/giphy.webp" />
             </>
           )}
         </main>
