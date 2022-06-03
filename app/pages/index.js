@@ -14,12 +14,11 @@ const appContainer = {
   alignItems: "center",
 };
 
-const headerContainer = {};
-
 const header = {
   fontFamily: "KeeponTruckin",
   fontSize: "8rem",
   color: "#1E1E1E",
+  textAlign: "center"
 };
 
 const mainContainer = {
@@ -62,6 +61,11 @@ const ctaButton = ({ hover }) => ({
   cursor: "pointer",
   color: "white",
 });
+
+const imgStyle = {
+  maxWidth: "80vw",
+  marginTop: "8px",
+}
 
 export default function Home() {
   const web3ModalRef = useRef();
@@ -148,8 +152,6 @@ export default function Home() {
         providerOptions: {},
         disableInjectedProvider: false,
       });
-
-      connectWallet();
     }
   }, [walletConnected]);
 
@@ -174,7 +176,7 @@ export default function Home() {
       </Head>
 
       <div style={appContainer}>
-        <header style={headerContainer}>
+        <header>
           <h1 style={header}>Fruit Loops</h1>
           <div style={walletBtnWrap}>{renderButton()}</div>
         </header>
@@ -194,7 +196,7 @@ export default function Home() {
                 {loading && (
                   <>
                     <p>Minting...</p>
-                    <img src="https://i.giphy.com/media/yoJC2zh1Afnc9og4U0/giphy.webp" />
+                    <img style={imgStyle} src="https://i.giphy.com/media/yoJC2zh1Afnc9og4U0/giphy.webp" />
                   </>
                 )}
                 {!loading && link !== "" && (
@@ -204,7 +206,7 @@ export default function Home() {
             </>
           ) : (
             <>
-              <p>Welcome!</p>
+              <p>Welcome! Connect your wallet to mint an NFT.</p>
               <img src="https://i.giphy.com/media/yoJC2zh1Afnc9og4U0/giphy.webp" />
             </>
           )}
